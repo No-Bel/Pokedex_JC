@@ -25,7 +25,7 @@ private val LightColorPalette = lightColorScheme(
 )
 
 @Composable
-fun JetpackComposePokedexTheme(
+fun PokedexTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {

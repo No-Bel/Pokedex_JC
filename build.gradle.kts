@@ -7,6 +7,7 @@ buildscript {
         set("retrofit_okhttp3_version", "5.0.0-alpha.13")
         set("coroutines_version", "1.7.1")
         set("lifecycle_version", "2.7.0")
+        set("compose_version", "1.0.0-beta01")
     }
 }
 plugins {

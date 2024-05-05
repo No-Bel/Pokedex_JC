@@ -69,6 +69,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation("androidx.compose.material:material-icons-core:${rootProject.extra["compose_version"]}")
+    implementation("androidx.compose.material:material-icons-extended:${rootProject.extra["compose_version"]}")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha04")
+    implementation("androidx.navigation:navigation-compose:1.0.0-alpha09")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha05")
+
     // Retrofit
     //noinspection UseTomlInstead
     implementation("com.squareup.retrofit2:retrofit:${rootProject.extra["retrofit_version"]}")
