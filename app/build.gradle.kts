@@ -111,8 +111,6 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:${rootProject.extra["di_hilt"]}")
     //noinspection UseTomlInstead
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    //noinspection UseTomlInstead
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     kapt("com.google.dagger:hilt-android-compiler:${rootProject.extra["di_hilt"]}")
 
     //noinspection UseTomlInstead
