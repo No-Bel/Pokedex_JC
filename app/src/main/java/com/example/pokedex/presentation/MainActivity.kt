@@ -1,4 +1,4 @@
-package com.example.pokedex
+package com.example.pokedex.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.pokedex.ui.theme.PokedexTheme
+import com.example.pokedex.presentation.ui.theme.PokedexTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
