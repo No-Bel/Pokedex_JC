@@ -112,7 +112,9 @@ dependencies {
     //noinspection UseTomlInstead
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     kapt("com.google.dagger:hilt-android-compiler:${rootProject.extra["di_hilt"]}")
+    //noinspection UseTomlInstead
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
     //noinspection UseTomlInstead
-//    implementation("com.android.support:palette-v7:28.0.0")
+    implementation("com.android.support:palette-v7:28.0.0")
 }

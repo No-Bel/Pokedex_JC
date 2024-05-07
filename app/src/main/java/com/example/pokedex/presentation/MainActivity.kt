@@ -12,6 +12,10 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.pokedex.presentation.pokemonList.PokemonListScreen
 import com.example.pokedex.presentation.ui.theme.PokedexTheme
+import com.example.pokedex.presentation.util.Constants.DOMAIN_COLOR
+import com.example.pokedex.presentation.util.Constants.POKEMON_DETAIL_SCREEN
+import com.example.pokedex.presentation.util.Constants.POKEMON_LIST_SCREEN
+import com.example.pokedex.presentation.util.Constants.POKEMON_NAME
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,26 +27,26 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(
                     navController = navController,
-                    startDestination = "pokemon_list_screen"
+                    startDestination = POKEMON_LIST_SCREEN
                 ) {
-                    composable("pokemon_list_screen") {
+                    composable(POKEMON_LIST_SCREEN) {
                         PokemonListScreen(navController = navController)
                     }
-                    composable("pokemon_detail_screen/{dominantColor}/{pokemonName}",
+                    composable("$POKEMON_DETAIL_SCREEN/{$DOMAIN_COLOR}/{$POKEMON_NAME}",
                         arguments = listOf(
-                            navArgument("dominantColor") {
+                            navArgument(DOMAIN_COLOR) {
                                 type = NavType.IntType
                             },
-                            navArgument("pokemonName") {
+                            navArgument(POKEMON_NAME) {
                                 type = NavType.StringType
                             }
                         )) {
                         val dominantColor = remember {
-                            val color = it.arguments?.getInt("dominantColor")
+                            val color = it.arguments?.getInt(DOMAIN_COLOR)
                             color?.let { Color(it) } ?: Color.White
                         }
                         val pokemonName = remember {
-                            it.arguments?.getString("pokemonName")
+                            it.arguments?.getString(POKEMON_NAME)
                         }
                     }
                 }
