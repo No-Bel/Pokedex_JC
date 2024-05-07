@@ -89,7 +89,7 @@ dependencies {
     //noinspection UseTomlInstead
     implementation("com.jakewharton.timber:timber:4.7.1")
 
-//    // Coroutines
+    // Coroutines
     //noinspection UseTomlInstead
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.extra["coroutines_version"]}")
     //noinspection UseTomlInstead
@@ -101,9 +101,7 @@ dependencies {
 
     // Coil
     //noinspection UseTomlInstead
-    implementation("io.coil-kt:coil:1.1.1")
-    //noinspection UseTomlInstead
-    implementation("com.google.accompanist:accompanist-coil:0.7.0")
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
     //Dagger - Hilt
     //noinspection UseTomlInstead
