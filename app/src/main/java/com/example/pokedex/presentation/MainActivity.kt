@@ -5,18 +5,21 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.toLowerCase
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.pokedex.presentation.pokemonList.PokemonListScreen
+import com.example.pokedex.presentation.pokemon_detail.PokemonDetailScreen
 import com.example.pokedex.presentation.ui.theme.PokedexTheme
 import com.example.pokedex.presentation.util.Constants.DOMAIN_COLOR
 import com.example.pokedex.presentation.util.Constants.POKEMON_DETAIL_SCREEN
 import com.example.pokedex.presentation.util.Constants.POKEMON_LIST_SCREEN
 import com.example.pokedex.presentation.util.Constants.POKEMON_NAME
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -48,6 +51,11 @@ class MainActivity : ComponentActivity() {
                         val pokemonName = remember {
                             it.arguments?.getString(POKEMON_NAME)
                         }
+                        PokemonDetailScreen(
+                            dominantColor = dominantColor,
+                            pokemonName = pokemonName?.lowercase(Locale.ROOT) ?: "",
+                            navController = navController
+                        )
                     }
                 }
             }
