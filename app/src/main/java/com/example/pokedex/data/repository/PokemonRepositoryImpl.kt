@@ -5,10 +5,8 @@ import com.example.pokedex.data.remote.responses.Pokemon
 import com.example.pokedex.data.remote.responses.PokemonList
 import com.example.pokedex.domain.repository.PokemonRepository
 import com.example.pokedex.presentation.util.Resource
-import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
-@ActivityScoped
 class PokemonRepositoryImpl @Inject constructor(
     private val pokeApi: PokeApi
 ): PokemonRepository{

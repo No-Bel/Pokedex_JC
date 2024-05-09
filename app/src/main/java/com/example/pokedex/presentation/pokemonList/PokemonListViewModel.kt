@@ -10,6 +10,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.palette.graphics.Palette
 import com.example.pokedex.data.models.PokedexListEntry
 import com.example.pokedex.data.repository.PokemonRepositoryImpl
+import com.example.pokedex.domain.usecases.GetPokemonListUseCase
 import com.example.pokedex.presentation.util.Constants.PAGE_SIZE
 import com.example.pokedex.presentation.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,7 +21,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PokemonListViewModel @Inject constructor(
-    private val repository: PokemonRepositoryImpl
+    private val getPokemonListUseCase: GetPokemonListUseCase
 ) : ViewModel() {
 
     private var curPage = 0
@@ -67,8 +68,7 @@ class PokemonListViewModel @Inject constructor(
     fun loadPokemonPaginated() {
         viewModelScope.launch {
             isLoading.value = true
-            val result = repository.getPokemonList(PAGE_SIZE, curPage * PAGE_SIZE)
-            when(result) {
+            when(val result = getPokemonListUseCase(PAGE_SIZE, curPage * PAGE_SIZE)) {
                 is Resource.Success -> {
                     endReached.value = curPage * PAGE_SIZE >= result.data!!.count
                     val pokedexEntries = result.data.results.mapIndexed { index, entry ->
