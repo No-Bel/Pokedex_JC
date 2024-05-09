@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.palette.graphics.Palette
 import com.example.pokedex.data.models.PokedexListEntry
-import com.example.pokedex.data.repository.PokemonRepositoryImpl
 import com.example.pokedex.domain.usecases.GetPokemonListUseCase
 import com.example.pokedex.presentation.util.Constants.PAGE_SIZE
 import com.example.pokedex.presentation.util.Resource
